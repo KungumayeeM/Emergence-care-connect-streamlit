@@ -1,0 +1,7 @@
+hospital_id,hospital_name,hospital_type,latitude,longitude,emergency_beds,icu_total,icu_available,ventilator_available,oxygen_available,blood_available,trauma_care,cardiologist,neurologist,orthopedic,surgery,current_occupancy,last_updated
+H001,City General Hospital,Government,13.0827,80.2707,12,10,2,2,Yes,Yes,Yes,Yes,Yes,Yes,Yes,78,2026-09-04 20:00
+H002,Metro Care Hospital,Private,13.0604,80.2496,8,12,4,3,Yes,Yes,Yes,Yes,Yes,Yes,Yes,65,2026-09-04 20:02
+H003,Advanced Trauma Centre,Specialty,13.0475,80.2090,6,15,6,5,Yes,Yes,Yes,No,No,Yes,Yes,60,2026-09-04 20:01
+H004,LifeLine Medical Center,Private,13.1067,80.2206,10,8,1,1,Yes,No,No,Yes,Yes,Yes,Yes,82,2026-09-04 19:58
+H005,Central Multispeciality Hospital,Private,13.0339,80.2619,15,10,3,2,Yes,Yes,Yes,Yes,Yes,Yes,Yes,72,2026-09-04 20:03
+H006,Emergency Care Institute,Government,13.1185,80.2895,10,14,5,4,Yes,Yes,Yes,Yes,No,Yes,Yes,55,2026-09-04 20:04

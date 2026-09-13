@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        EmergencyCare Connect | Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     TOP NAVIGATION
+========================================================= -->
+
+<header class="topbar">
+
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🚑
+        </div>
+
+        <div>
+
+            <h1>
+                EmergencyCare
+                <span>Connect</span>
+            </h1>
+
+            <small>
+                Intelligent Emergency Coordination
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="topbar-right">
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+
+        <div class="user-menu">
+
+            <div class="user-avatar" id="userAvatar">
+                U
+            </div>
+
+            <div class="user-details">
+
+                <strong id="userName">
+                    User
+                </strong>
+
+                <small id="userRole">
+                    Patient
+                </small>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="dashboard-container">
+
+
+    <!-- HERO -->
+
+    <section class="dashboard-hero">
+
+        <div>
+
+            <span class="eyebrow">
+                EMERGENCY RESPONSE PLATFORM
+            </span>
+
+            <h2>
+                Find the right care,
+                <span>when every second matters.</span>
+            </h2>
+
+            <p>
+                EmergencyCare Connect uses intelligent
+                hospital matching to identify suitable
+                emergency resources based on patient
+                requirements, location and hospital
+                availability.
+            </p>
+
+        </div>
+
+
+        <div class="hero-icon">
+            🏥
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         NETWORK STATS
+    ===================================================== -->
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏥
+            </div>
+
+            <div>
+
+                <strong id="hospitalCount">
+                    --
+                </strong>
+
+                <span>
+                    Hospitals
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🛏️
+            </div>
+
+            <div>
+
+                <strong id="bedCount">
+                    --
+                </strong>
+
+                <span>
+                    Emergency Beds
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ❤️
+            </div>
+
+            <div>
+
+                <strong id="icuCount">
+                    --
+                </strong>
+
+                <span>
+                    ICU Available
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🚑
+            </div>
+
+            <div>
+
+                <strong id="ambulanceCount">
+                    --
+                </strong>
+
+                <span>
+                    Active Ambulances
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💨
+            </div>
+
+            <div>
+
+                <strong id="ventilatorCount">
+                    --
+                </strong>
+
+                <span>
+                    Ventilators
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div>
+
+                <strong id="reservationCount">
+                    --
+                </strong>
+
+                <span>
+                    Active Reservations
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         PATIENT + RESULTS
+    ===================================================== -->
+
+    <section class="main-grid">
+
+
+        <!-- PATIENT FORM -->
+
+        <div class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="card-kicker">
+                        STEP 01
+                    </span>
+
+                    <h3>
+                        Emergency Patient
+                    </h3>
+
+                </div>
+
+                <span class="card-icon">
+                    👤
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Patient Name
+                    </label>
+
+                    <input
+                        id="name"
+                        value="Emergency Patient"
+                        placeholder="Enter patient name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Emergency Type
+                    </label>
+
+                    <select id="emergency">
+
+                        <option>
+                            Road Accident
+                        </option>
+
+                        <option>
+                            Cardiac Emergency
+                        </option>
+
+                        <option>
+                            Stroke
+                        </option>
+
+                        <option>
+                            Severe Bleeding
+                        </option>
+
+                        <option>
+                            Burn
+                        </option>
+
+                        <option>
+                            Fracture/Trauma
+                        </option>
+
+                        <option>
+                            Breathing Difficulty
+                        </option>
+
+                        <option>
+                            Unconscious
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Severity
+                    </label>
+
+                    <select id="severity">
+
+                        <option value="Critical">
+                            Critical
+                        </option>
+
+                        <option value="Serious">
+                            Serious
+                        </option>
+
+                        <option value="Stable">
+                            Stable
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- RESOURCES -->
+
+            <div class="section-label">
+
+                Required Emergency Resources
+
+            </div>
+
+
+            <div class="resource-grid">
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="emergency_bed"
+                        checked
+                    >
+
+                    <span>
+                        🛏️
+                        Emergency Bed
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="icu"
+                    >
+
+                    <span>
+                        ❤️
+                        ICU
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="ventilator"
+                    >
+
+                    <span>
+                        💨
+                        Ventilator
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="oxygen"
+                    >
+
+                    <span>
+                        🫁
+                        Oxygen
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="blood"
+                    >
+
+                    <span>
+                        🩸
+                        Blood
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="trauma"
+                    >
+
+                    <span>
+                        🏥
+                        Trauma Care
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="cardiologist"
+                    >
+
+                    <span>
+                        ❤️
+                        Cardiologist
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="neurologist"
+                    >
+
+                    <span>
+                        🧠
+                        Neurologist
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="orthopedic"
+                    >
+
+                    <span>
+                        🦴
+                        Orthopedic
+                    </span>
+
+                </label>
+
+
+                <label class="resource-option">
+
+                    <input
+                        type="checkbox"
+                        value="surgery"
+                    >
+
+                    <span>
+                        ⚕️
+                        Surgery
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="section-label">
+                Ambulance / Patient Location
+            </div>
+
+
+            <div class="location-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Latitude
+                    </label>
+
+                    <input
+                        id="lat"
+                        value="13.0700"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Longitude
+                    </label>
+
+                    <input
+                        id="lon"
+                        value="80.2500"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="gps-button"
+                onclick="useGPS()"
+            >
+                📍 Use My GPS Location
+            </button>
+
+
+            <p
+                id="gps"
+                class="gps-message"
+            ></p>
+
+
+            <button
+                class="match-button"
+                onclick="match()"
+            >
+                <span>
+                    🤖 Find Suitable Hospitals
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="dashboard-card results-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="card-kicker">
+                        STEP 02
+                    </span>
+
+                    <h3>
+                        AI Hospital Recommendations
+                    </h3>
+
+                </div>
+
+                <span class="card-icon">
+                    🤖
+                </span>
+
+            </div>
+
+
+            <div
+                id="results"
+                class="results-container"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🏥
+                    </div>
+
+                    <h4>
+                        Ready to find suitable care
+                    </h4>
+
+                    <p>
+                        Enter the emergency details and
+                        click "Find Suitable Hospitals".
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         RESERVATION WORKFLOW
+    ===================================================== -->
+
+    <section class="dashboard-card workflow-card">
+
+
+        <div class="card-header">
+
+            <div>
+
+                <span class="card-kicker">
+                    STEP 03
+                </span>
+
+                <h3>
+                    Reservation Workflow
+                </h3>
+
+            </div>
+
+            <span class="card-icon">
+                📋
+            </span>
+
+        </div>
+
+
+        <div
+            id="workflow"
+            class="workflow-content"
+        >
+
+            <div class="workflow-empty">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <strong>
+                        Select a suitable hospital
+                    </strong>
+
+                    <p>
+                        Hospital reservation controls
+                        will appear after matching.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 EmergencyCare Connect
+        </div>
+
+        <div>
+            AI-Assisted Emergency Coordination Prototype
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+<script src="auth.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
